@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Chúc mừng năm mới</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="stylesheet" href="jquery-sakura.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="caudoi-wrapper">
-        <div class="caudoi-item-1">
-          <img src="./assets/img/caudoi1.png" alt="caudoi" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>Chúc mừng năm mới</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/favicon.ico"
+            sizes="32x32"
+        />
+        <link rel="stylesheet" href="jquery-sakura.min.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="caudoi-wrapper">
+                <div class="caudoi-item-1">
+                    <img src="./assets/img/caudoi1.png" alt="caudoi" />
+                </div>
+                <div class="caudoi-item-2">
+                    <img src="./assets/img/caudoi2.png" alt="caudoi" />
+                </div>
+            </div>
+            <div class="banh-chung">
+                <img src="./assets/img/banhchung.png" alt="banh-chung" />
+            </div>
+            <div class="cay-dao">
+                <img src="./assets/img/caydao.png" alt="cay-dao" />
+                <div class="lixi-container">
+                    <div id="lixi-1" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                    <div id="lixi-2" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                    <div id="lixi-3" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                    <div id="lixi-4" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                    <div id="lixi-5" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                    <div id="lixi-6" class="lixi">
+                        <img src="" alt="Lì xì" />
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <p class="message" id="message"></p>
+                <img
+                    class="image"
+                    id="image"
+                    src=""
+                    alt="Hình ảnh ngẫu nhiên"
+                />
+            </div>
         </div>
-        <div class="caudoi-item-2">
-          <img src="./assets/img/caudoi2.png" alt="caudoi" />
-        </div>
-      </div>
-      <div class="banh-chung">
-        <img src="./assets/img/banhchung.png" alt="banh-chung" />
-      </div>
-      <div class="cay-dao">
-        <img src="./assets/img/caydao.png" alt="cay-dao" />
-        <div class="lixi-container">
-          <div id="lixi-1" class="lixi"><img src="" alt="Lì xì" /></div>
-          <div id="lixi-2" class="lixi"><img src="" alt="Lì xì" /></div>
-          <div id="lixi-3" class="lixi"><img src="" alt="Lì xì" /></div>
-          <div id="lixi-4" class="lixi"><img src="" alt="Lì xì" /></div>
-          <div id="lixi-5" class="lixi"><img src="" alt="Lì xì" /></div>
-          <div id="lixi-6" class="lixi"><img src="" alt="Lì xì" /></div>
-        </div>
-      </div>
-      <div class="card">
-        <p class="message" id="message"></p>
-        <img class="image" id="image" src="" alt="Hình ảnh ngẫu nhiên" />
-      </div>
-    </div>
-    <audio id="bgMusic" loop>
-      <source
-        src="https://firebasestorage.googleapis.com/v0/b/webai-54992.appspot.com/o/nhuhoamuaxuan-wrenEvans.mp3?alt=media&token=2a4a3a23-9d2d-4c7e-b424-6110cb7c0184"
-        type="audio/mp3"
-      />
-    </audio>
-    <button class="music-toggle">🔊</button>
-    <a
-      href="https://www.tiktok.com/@trtoantech"
-      target="_blank"
-      class="tiktok-logo"
-    >
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/webai-54992.appspot.com/o/logo-tiktok.png?alt=media&token=4473a42a-e492-4a4d-8821-ed9348ac2339"
-        alt="Create By"
-      />
-    </a>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="jquery-sakura.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+        <audio id="bgMusic" preload="auto" autoplay loop></audio>
+        <div id="nowPlaying" class="now-playing"></div>
+
+        <a
+            href="https://www.facebook.com/datvuive.26"
+            target="_blank"
+            class="fb-logo"
+        >
+            <img
+                src="https://img.icons8.com/fluency/96/facebook-new.png"
+                alt="Create By"
+            />
+        </a>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="jquery-sakura.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>

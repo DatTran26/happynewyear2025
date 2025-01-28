@@ -118,7 +118,7 @@ function handleClickLixi() {
     lixi.addEventListener('click', function () {
       if (availableMessages.length > 0) {
         const message = getRandomPosition(availableMessages);
-        const hasQR = showQR ? Math.random() < 0.4 : false; // 60% chance for QR
+        const hasQR = showQR ? Math.random() < 0.1 : false; // 20% chance for QR
         if (hasQR) {
           const lixiMessage = getRandomPosition(availableLixiMessages);
           showCard(message, lixiMessage, hasQR);
@@ -138,23 +138,52 @@ function handleClickLixi() {
       closeCurrentCard();
     }
   });
+
 }
+// Danh sách các file nhạc (thay thế tên file bằng file thực tế trong folder nhactet)
+const musicFolder = "./assets/nhactet/";
+const playlist = [
+  "1+Thinh_Vuong_Viet_Nam_Sang_Ngoi.mp3",
+  "2+Tet_Nay_Con_Se_Ve.mp3",
+  "3+Tet_Nay_Con_Se_Ve.mp3",
+  "4+Tet_Dinh_Noc.mp3",
+  "5+Tet_Vo_Ve.mp3",
+  "6+Tet_Oi_Tet_A.mp3",
+  "7+Tet_Dong_Day.mp3",
+  "8+Nam_Qua_Da_Lam_Gi.mp3",
+  "9+Tet_Ve_Di_Con.mp3",
+  "10+Tet_Nha_Minh.mp3",
+  "11+Tet_Nay_De_Con_Lo.mp3",
 
-function handleMusic() {
-  // Thêm vào cuối file
-  const musicBtn = document.querySelector('.music-toggle');
-  const audio = document.getElementById('bgMusic');
+];
 
-  musicBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      musicBtn.textContent = '🔊';
-    } else {
-      audio.pause();
-      musicBtn.textContent = '🔈';
-    }
+// Các biến
+let currentTrackIndex = 0;
+const bgMusic = document.getElementById("bgMusic");
+const nowPlaying = document.getElementById("nowPlaying");
+
+// Phát bài hát hiện tại
+function loadTrack(index) {
+  const trackName = playlist[index];
+  bgMusic.src = musicFolder + trackName;
+  nowPlaying.textContent = `Đang phát: ${trackName}`;
+  bgMusic.play().catch((error) => {
+    console.warn("Autoplay bị chặn bởi trình duyệt:", error);
   });
 }
 
+// Tự động chuyển bài khi kết thúc
+bgMusic.addEventListener("ended", () => {
+  currentTrackIndex = Math.floor(Math.random() * playlist.length); // Chọn bài ngẫu nhiên
+  loadTrack(currentTrackIndex);
+});
+
+// Phát nhạc ngay lập tức khi tải trang
+document.addEventListener("DOMContentLoaded", () => {
+  currentTrackIndex = Math.floor(Math.random() * playlist.length); // Chọn bài ngẫu nhiên
+  loadTrack(currentTrackIndex);
+});
+
+
 handleClickLixi();
-handleMusic();
+
