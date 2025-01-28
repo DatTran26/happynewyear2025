@@ -73,10 +73,6 @@ function handleClickLixi() {
   // Mảng chứa message cho bao lì xì
   const lixiMessages = [
     'Mình xin lì xì 💲',
-    'Xin 10k nhé 💵',
-    'Xin 20k nhé 💶',
-    'Xin 30k nhé 💷',
-    'Xin 50k nhé 💸',
   ];
 
   // file qr
@@ -118,7 +114,7 @@ function handleClickLixi() {
     lixi.addEventListener('click', function () {
       if (availableMessages.length > 0) {
         const message = getRandomPosition(availableMessages);
-        const hasQR = showQR ? Math.random() < 0.1 : false; // 20% chance for QR
+        const hasQR = showQR ? Math.random() < 0.1 : false; // 1% chance for QR
         if (hasQR) {
           const lixiMessage = getRandomPosition(availableLixiMessages);
           showCard(message, lixiMessage, hasQR);
