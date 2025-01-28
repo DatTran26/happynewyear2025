@@ -162,6 +162,29 @@ let currentTrackIndex = 0;
 const bgMusic = document.getElementById("bgMusic");
 const nowPlaying = document.getElementById("nowPlaying");
 
+bgMusic.play().catch((error) => {
+  console.warn("Autoplay bị chặn bởi trình duyệt:", error);
+  // Thông báo yêu cầu người dùng tương tác
+  const message = document.createElement("div");
+  message.innerText = "Nhấp vào màn hình để bắt đầu nhạc 🎵";
+  message.style.position = "absolute";
+  message.style.top = "50%";
+  message.style.left = "50%";
+  message.style.transform = "translate(-50%, -50%)";
+  message.style.padding = "20px";
+  message.style.background = "rgba(0, 0, 0, 0.8)";
+  message.style.color = "white";
+  message.style.borderRadius = "8px";
+  message.style.cursor = "pointer";
+  document.body.appendChild(message);
+
+  // Xử lý sự kiện click
+  message.addEventListener("click", () => {
+    bgMusic.play();
+    message.remove(); // Xóa thông báo sau khi phát
+  });
+});
+
 // Phát bài hát hiện tại
 function loadTrack(index) {
   const trackName = playlist[index];
